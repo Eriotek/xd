@@ -1,7 +1,7 @@
 package myTest;
 
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -9,15 +9,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by student01 on 15.12.15.
@@ -27,13 +21,7 @@ public class TestLogin {
 
     @BeforeClass
     public static void setUp() throws MalformedURLException {
-        String nodeURL = "http://192.168.33.10:4444";
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        capabilities.setBrowserName("chrome");
-        capabilities.setPlatform(Platform.LINUX);
         driver = new ChromeDriver();
-        //driver = new RemoteWebDriver(new URL(nodeURL),capabilities);
-        //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
 
     //@Test
